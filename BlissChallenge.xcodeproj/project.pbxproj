@@ -18,6 +18,9 @@
 		501274B8308A21BD000B7ABD /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501274B7308A21BD000B7ABD /* Emoji.swift */; };
 		501274BA308A22D5000B7ABD /* EmojiRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501274B9308A22D5000B7ABD /* EmojiRepositoryProtocol.swift */; };
 		501274BC308A236D000B7ABD /* EmojiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501274BB308A236D000B7ABD /* EmojiRepository.swift */; };
+		501274C0308A246A000B7ABD /* HTTPClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501274BF308A246A000B7ABD /* HTTPClientProtocol.swift */; };
+		501274C2308A24CA000B7ABD /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501274C1308A24CA000B7ABD /* NetworkError.swift */; };
+		501274C4308A2533000B7ABD /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501274C3308A2533000B7ABD /* HTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		501274B7308A21BD000B7ABD /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		501274B9308A22D5000B7ABD /* EmojiRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRepositoryProtocol.swift; sourceTree = "<group>"; };
 		501274BB308A236D000B7ABD /* EmojiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRepository.swift; sourceTree = "<group>"; };
+		501274BF308A246A000B7ABD /* HTTPClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientProtocol.swift; sourceTree = "<group>"; };
+		501274C1308A24CA000B7ABD /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		501274C3308A2533000B7ABD /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,7 @@
 		50127496308A1741000B7ABD /* BlissChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				501274BD308A243F000B7ABD /* Core */,
 				501274AF308A1C8A000B7ABD /* Features */,
 				50127497308A1741000B7ABD /* AppDelegate.swift */,
 				50127499308A1741000B7ABD /* SceneDelegate.swift */,
@@ -146,6 +153,24 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		501274BD308A243F000B7ABD /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				501274BE308A2443000B7ABD /* Network */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		501274BE308A2443000B7ABD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				501274BF308A246A000B7ABD /* HTTPClientProtocol.swift */,
+				501274C1308A24CA000B7ABD /* NetworkError.swift */,
+				501274C3308A2533000B7ABD /* HTTPClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -219,9 +244,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501274C0308A246A000B7ABD /* HTTPClientProtocol.swift in Sources */,
+				501274C2308A24CA000B7ABD /* NetworkError.swift in Sources */,
 				501274BC308A236D000B7ABD /* EmojiRepository.swift in Sources */,
 				501274BA308A22D5000B7ABD /* EmojiRepositoryProtocol.swift in Sources */,
 				5012749C308A1741000B7ABD /* HomeViewController.swift in Sources */,
+				501274C4308A2533000B7ABD /* HTTPClient.swift in Sources */,
 				50127498308A1741000B7ABD /* AppDelegate.swift in Sources */,
 				501274B8308A21BD000B7ABD /* Emoji.swift in Sources */,
 				5012749A308A1741000B7ABD /* SceneDelegate.swift in Sources */,

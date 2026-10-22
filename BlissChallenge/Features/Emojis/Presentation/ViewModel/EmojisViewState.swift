@@ -2,6 +2,6 @@ import Foundation
 
 enum EmojisViewState {
     case loading
-    case success(EmojisDictionary)
+    case success([Emoji])
     case failure(String)
 }

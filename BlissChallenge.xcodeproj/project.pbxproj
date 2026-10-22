@@ -15,6 +15,7 @@
 		501274A4308A1743000B7ABD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501274A2308A1743000B7ABD /* LaunchScreen.storyboard */; };
 		501274AC308A19E8000B7ABD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 501274AB308A19E8000B7ABD /* .gitignore */; };
 		501274AE308A1A47000B7ABD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 501274AD308A1A47000B7ABD /* README.md */; };
+		501274B8308A21BD000B7ABD /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501274B7308A21BD000B7ABD /* Emoji.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		501274A5308A1743000B7ABD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		501274AB308A19E8000B7ABD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		501274AD308A1A47000B7ABD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		501274B7308A21BD000B7ABD /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		501274B1308A1C9C000B7ABD /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				501274B7308A21BD000B7ABD /* Emoji.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			files = (
 				5012749C308A1741000B7ABD /* HomeViewController.swift in Sources */,
 				50127498308A1741000B7ABD /* AppDelegate.swift in Sources */,
+				501274B8308A21BD000B7ABD /* Emoji.swift in Sources */,
 				5012749A308A1741000B7ABD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

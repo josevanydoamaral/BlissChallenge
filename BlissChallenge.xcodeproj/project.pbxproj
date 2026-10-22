@@ -22,6 +22,8 @@
 		501274C2308A24CA000B7ABD /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501274C1308A24CA000B7ABD /* NetworkError.swift */; };
 		501274C4308A2533000B7ABD /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501274C3308A2533000B7ABD /* HTTPClient.swift */; };
 		501274C6308A2EF8000B7ABD /* FetchEmojisUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501274C5308A2EF8000B7ABD /* FetchEmojisUseCase.swift */; };
+		501274C9308A311B000B7ABD /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501274C8308A311B000B7ABD /* AppContainer.swift */; };
+		501274CB308A326D000B7ABD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501274CA308A326D000B7ABD /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		501274C1308A24CA000B7ABD /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		501274C3308A2533000B7ABD /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		501274C5308A2EF8000B7ABD /* FetchEmojisUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchEmojisUseCase.swift; sourceTree = "<group>"; };
+		501274C8308A311B000B7ABD /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		501274CA308A326D000B7ABD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 		50127496308A1741000B7ABD /* BlissChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				501274C7308A310B000B7ABD /* App */,
 				501274BD308A243F000B7ABD /* Core */,
 				501274AF308A1C8A000B7ABD /* Features */,
 				50127497308A1741000B7ABD /* AppDelegate.swift */,
@@ -143,6 +148,7 @@
 		501274B5308A1CE3000B7ABD /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				501274CC308A3282000B7ABD /* ViewModel */,
 				501274B6308A1CF5000B7ABD /* View */,
 			);
 			path = Presentation;
@@ -172,6 +178,22 @@
 				501274C3308A2533000B7ABD /* HTTPClient.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		501274C7308A310B000B7ABD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				501274C8308A311B000B7ABD /* AppContainer.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		501274CC308A3282000B7ABD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				501274CA308A326D000B7ABD /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +275,8 @@
 				501274BA308A22D5000B7ABD /* EmojiRepositoryProtocol.swift in Sources */,
 				5012749C308A1741000B7ABD /* HomeViewController.swift in Sources */,
 				501274C4308A2533000B7ABD /* HTTPClient.swift in Sources */,
+				501274C9308A311B000B7ABD /* AppContainer.swift in Sources */,
+				501274CB308A326D000B7ABD /* HomeViewModel.swift in Sources */,
 				50127498308A1741000B7ABD /* AppDelegate.swift in Sources */,
 				501274C6308A2EF8000B7ABD /* FetchEmojisUseCase.swift in Sources */,
 				501274B8308A21BD000B7ABD /* Emoji.swift in Sources */,

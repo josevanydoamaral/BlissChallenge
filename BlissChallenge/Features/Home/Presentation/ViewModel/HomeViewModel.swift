@@ -1,8 +1,12 @@
-//
-//  HomeViewModel.swift
-//  BlissChallenge
-//
-//  Created by Josevany on 22/10/2026.
-//
-
 import Foundation
+
+@MainActor
+class HomeViewModel {
+    let useCase: FetchEmojisUseCase
+    
+    init(useCase: FetchEmojisUseCase) {
+        self.useCase = useCase
+    }
+    
+    
+}

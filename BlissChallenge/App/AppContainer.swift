@@ -1,8 +1,9 @@
-//
-//  AppContainer.swift
-//  BlissChallenge
-//
-//  Created by Josevany on 22/10/2026.
-//
-
 import Foundation
+
+class AppContainer {
+    @MainActor func makeFetchEmojisViewModel() -> HomeViewModel {
+        let repository: EmojiRepositoryProtocol = EmojiRepository()
+        let useCase: FetchEmojisUseCase = FetchEmojisUseCase(repository: repository)
+        return HomeViewModel(useCase: useCase)
+    }
+}

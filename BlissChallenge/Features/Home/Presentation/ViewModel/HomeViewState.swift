@@ -1,8 +1,13 @@
-//
-//  HomeViewState.swift
-//  BlissChallenge
-//
-//  Created by Josevany on 22/10/2026.
-//
-
 import Foundation
+
+enum ActionState {
+    case idle
+    case loading
+    case success
+    case failure(String)
+}
+
+
+struct HomeViewState {
+    var emojiState: ActionState = .idle
+}

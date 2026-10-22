@@ -24,6 +24,8 @@
 		501274C6308A2EF8000B7ABD /* FetchEmojisUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501274C5308A2EF8000B7ABD /* FetchEmojisUseCase.swift */; };
 		501274C9308A311B000B7ABD /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501274C8308A311B000B7ABD /* AppContainer.swift */; };
 		501274CB308A326D000B7ABD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501274CA308A326D000B7ABD /* HomeViewModel.swift */; };
+		501274CE308A348D000B7ABD /* HomeViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501274CD308A348D000B7ABD /* HomeViewState.swift */; };
+		501274D1308A392F000B7ABD /* EmojisViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501274D0308A392F000B7ABD /* EmojisViewState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		501274C5308A2EF8000B7ABD /* FetchEmojisUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchEmojisUseCase.swift; sourceTree = "<group>"; };
 		501274C8308A311B000B7ABD /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		501274CA308A326D000B7ABD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		501274CD308A348D000B7ABD /* HomeViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewState.swift; sourceTree = "<group>"; };
+		501274D0308A392F000B7ABD /* EmojisViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojisViewState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,7 @@
 		501274B3308A1CB4000B7ABD /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				501274CF308A38EF000B7ABD /* ViewModel */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -192,6 +197,15 @@
 			isa = PBXGroup;
 			children = (
 				501274CA308A326D000B7ABD /* HomeViewModel.swift */,
+				501274CD308A348D000B7ABD /* HomeViewState.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		501274CF308A38EF000B7ABD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				501274D0308A392F000B7ABD /* EmojisViewState.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -270,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				501274C0308A246A000B7ABD /* HTTPClientProtocol.swift in Sources */,
+				501274D1308A392F000B7ABD /* EmojisViewState.swift in Sources */,
 				501274C2308A24CA000B7ABD /* NetworkError.swift in Sources */,
 				501274BC308A236D000B7ABD /* EmojiRepository.swift in Sources */,
 				501274BA308A22D5000B7ABD /* EmojiRepositoryProtocol.swift in Sources */,
@@ -279,6 +294,7 @@
 				501274CB308A326D000B7ABD /* HomeViewModel.swift in Sources */,
 				50127498308A1741000B7ABD /* AppDelegate.swift in Sources */,
 				501274C6308A2EF8000B7ABD /* FetchEmojisUseCase.swift in Sources */,
+				501274CE308A348D000B7ABD /* HomeViewState.swift in Sources */,
 				501274B8308A21BD000B7ABD /* Emoji.swift in Sources */,
 				5012749A308A1741000B7ABD /* SceneDelegate.swift in Sources */,
 			);

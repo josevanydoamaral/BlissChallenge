@@ -32,7 +32,8 @@ class HomeViewModel {
         let result = await useCase.execute()
         
         switch result {
-        case .success(let emojis):
+        case .success(let emojisDictionary):
+            let emojis: [Emoji] = emojisDictionary.map { Emoji(name: $0.key, urlString: $0.value) }
             state = .success(emojis)
         case .failure(let errorMessage):
             state = .failure(errorMessage.localizedDescription)

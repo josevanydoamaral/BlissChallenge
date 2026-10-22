@@ -13,6 +13,8 @@
 		5012749F308A1741000B7ABD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5012749D308A1741000B7ABD /* Main.storyboard */; };
 		501274A1308A1743000B7ABD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 501274A0308A1743000B7ABD /* Assets.xcassets */; };
 		501274A4308A1743000B7ABD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501274A2308A1743000B7ABD /* LaunchScreen.storyboard */; };
+		501274AC308A19E8000B7ABD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 501274AB308A19E8000B7ABD /* .gitignore */; };
+		501274AE308A1A47000B7ABD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 501274AD308A1A47000B7ABD /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		501274A0308A1743000B7ABD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		501274A3308A1743000B7ABD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		501274A5308A1743000B7ABD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		501274AB308A19E8000B7ABD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		501274AD308A1A47000B7ABD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				50127497308A1741000B7ABD /* AppDelegate.swift */,
 				50127499308A1741000B7ABD /* SceneDelegate.swift */,
 				5012749B308A1741000B7ABD /* ViewController.swift */,
+				501274AB308A19E8000B7ABD /* .gitignore */,
+				501274AD308A1A47000B7ABD /* README.md */,
 				5012749D308A1741000B7ABD /* Main.storyboard */,
 				501274A0308A1743000B7ABD /* Assets.xcassets */,
 				501274A2308A1743000B7ABD /* LaunchScreen.storyboard */,
@@ -125,7 +131,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501274AC308A19E8000B7ABD /* .gitignore in Resources */,
 				501274A4308A1743000B7ABD /* LaunchScreen.storyboard in Resources */,
+				501274AE308A1A47000B7ABD /* README.md in Resources */,
 				501274A1308A1743000B7ABD /* Assets.xcassets in Resources */,
 				5012749F308A1741000B7ABD /* Main.storyboard in Resources */,
 			);

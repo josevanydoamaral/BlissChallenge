@@ -1,6 +1,10 @@
 import Foundation
 
 class EmojiRepository: EmojiRepositoryProtocol {
+    func fetchImageData(urlString: String) async throws -> Data {
+        <#code#>
+    }
+    
     let httpClient: HTTPClientProtocol
     let storageService: EmojiStorageServiceProtocol
     

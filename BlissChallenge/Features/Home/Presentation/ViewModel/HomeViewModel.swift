@@ -16,8 +16,18 @@ class HomeViewModel {
         self.useCase = useCase
     }
     
-    func getRadomEmoji() async {
+    func getRandomEmoji() async {
+        state.emojiState = .loading
         
+        let result = await useCase.execute()
+        
+        switch result {
+        case .success(let randomEmoji):
+            state.emojiState = .success
+            state.randomEmoji = randomEmoji
+        case.failure(let error):
+            state.emojiState = .failure(error.localizedDescription)
+        }
     }
     
 }

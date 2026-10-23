@@ -34,6 +34,7 @@
 		50D80D44308B906100668C1D /* GetRandomEmojiUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D80D43308B906100668C1D /* GetRandomEmojiUseCase.swift */; };
 		50D80D46308BA57C00668C1D /* FetchEmojisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D80D45308BA57C00668C1D /* FetchEmojisViewModel.swift */; };
 		50D80D48308BA59800668C1D /* EmojisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D80D47308BA59800668C1D /* EmojisViewController.swift */; };
+		50D80D4D308BCFBA00668C1D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D80D4C308BCFBA00668C1D /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		50D80D43308B906100668C1D /* GetRandomEmojiUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRandomEmojiUseCase.swift; sourceTree = "<group>"; };
 		50D80D45308BA57C00668C1D /* FetchEmojisViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchEmojisViewModel.swift; sourceTree = "<group>"; };
 		50D80D47308BA59800668C1D /* EmojisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojisViewController.swift; sourceTree = "<group>"; };
+		50D80D4C308BCFBA00668C1D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				501274C8308A311B000B7ABD /* AppContainer.swift */,
+				50D80D4C308BCFBA00668C1D /* AppCoordinator.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				501274C2308A24CA000B7ABD /* NetworkError.swift in Sources */,
 				501274BC308A236D000B7ABD /* EmojiRepository.swift in Sources */,
 				50D80D48308BA59800668C1D /* EmojisViewController.swift in Sources */,
+				50D80D4D308BCFBA00668C1D /* AppCoordinator.swift in Sources */,
 				501274BA308A22D5000B7ABD /* EmojiRepositoryProtocol.swift in Sources */,
 				5012749C308A1741000B7ABD /* HomeViewController.swift in Sources */,
 				501274C4308A2533000B7ABD /* HTTPClient.swift in Sources */,

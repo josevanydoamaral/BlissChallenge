@@ -30,6 +30,8 @@
 		50D80D39308B6D5F00668C1D /* EmojiStorageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D80D38308B6D5E00668C1D /* EmojiStorageServiceProtocol.swift */; };
 		50D80D3B308B6DCD00668C1D /* EmojiStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D80D3A308B6DCD00668C1D /* EmojiStorageService.swift */; };
 		50D80D3C308B718900668C1D /* BlissChallengeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50D80D33308B6A9800668C1D /* BlissChallengeModel.xcdatamodeld */; };
+		50D80D42308B904200668C1D /* RandomEmoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D80D41308B904200668C1D /* RandomEmoji.swift */; };
+		50D80D44308B906100668C1D /* GetRandomEmojiUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D80D43308B906100668C1D /* GetRandomEmojiUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		50D80D36308B6B2700668C1D /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		50D80D38308B6D5E00668C1D /* EmojiStorageServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiStorageServiceProtocol.swift; sourceTree = "<group>"; };
 		50D80D3A308B6DCD00668C1D /* EmojiStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiStorageService.swift; sourceTree = "<group>"; };
+		50D80D41308B904200668C1D /* RandomEmoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomEmoji.swift; sourceTree = "<group>"; };
+		50D80D43308B906100668C1D /* GetRandomEmojiUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRandomEmojiUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,8 @@
 				501274B7308A21BD000B7ABD /* Emoji.swift */,
 				501274B9308A22D5000B7ABD /* EmojiRepositoryProtocol.swift */,
 				501274C5308A2EF8000B7ABD /* FetchEmojisUseCase.swift */,
+				50D80D41308B904200668C1D /* RandomEmoji.swift */,
+				50D80D43308B906100668C1D /* GetRandomEmojiUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -311,6 +317,7 @@
 				5012749C308A1741000B7ABD /* HomeViewController.swift in Sources */,
 				501274C4308A2533000B7ABD /* HTTPClient.swift in Sources */,
 				50D80D37308B6B2700668C1D /* CoreDataStack.swift in Sources */,
+				50D80D44308B906100668C1D /* GetRandomEmojiUseCase.swift in Sources */,
 				50D80D3C308B718900668C1D /* BlissChallengeModel.xcdatamodeld in Sources */,
 				50D80D39308B6D5F00668C1D /* EmojiStorageServiceProtocol.swift in Sources */,
 				501274C9308A311B000B7ABD /* AppContainer.swift in Sources */,
@@ -321,6 +328,7 @@
 				501274CE308A348D000B7ABD /* HomeViewState.swift in Sources */,
 				501274B8308A21BD000B7ABD /* Emoji.swift in Sources */,
 				5012749A308A1741000B7ABD /* SceneDelegate.swift in Sources */,
+				50D80D42308B904200668C1D /* RandomEmoji.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

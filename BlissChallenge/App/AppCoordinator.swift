@@ -15,6 +15,7 @@ final class AppCoordinator {
         let viewModel = container.makeHomeViewModel()
         let homeViewController = HomeViewController(viewModel: viewModel)
         homeViewController.onShowEmoji = { [weak self] in self?.showEmojis() }
+        homeViewController.onShowUsers = { [weak self] in self?.showUsers() }
         
         navigationController.pushViewController(homeViewController, animated: false)
     }
@@ -24,5 +25,13 @@ final class AppCoordinator {
         let emojisViewController = EmojisViewController(viewModel: viewModel)
         
         navigationController.pushViewController(emojisViewController, animated: true)
+    }
+    
+    func showUsers() {
+        let viewModel = container.makeUsersViewModel()
+        let usersViewController = UsersViewController(viewModel: viewModel)
+        
+        navigationController.pushViewController(usersViewController, animated: true)
+
     }
 }

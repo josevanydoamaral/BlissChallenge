@@ -85,6 +85,28 @@ class HomeViewController: UIViewController {
         return button
     }()
     
+    let avatarListButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Avatar List", for: .normal)
+        button.backgroundColor = .systemBlue
+        button.layer.cornerRadius = 10
+        
+        
+        return button
+    }()
+    
+    let appleReposListButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Apple Repos", for: .normal)
+        button.backgroundColor = .systemBlue
+        button.layer.cornerRadius = 10
+        
+        
+        return button
+    }()
+    
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -112,6 +134,8 @@ class HomeViewController: UIViewController {
         view.addSubview(searchTextField)
         view.addSubview(searchbutton)
         view.addSubview(searchErrorLabel)
+        view.addSubview(avatarListButton)
+        view.addSubview(appleReposListButton)
         
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
@@ -153,7 +177,16 @@ class HomeViewController: UIViewController {
             searchErrorLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             searchErrorLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             
-      
+            avatarListButton.topAnchor.constraint(equalTo: searchErrorLabel.bottomAnchor, constant: 20),
+            avatarListButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            avatarListButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            avatarListButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            
+            appleReposListButton.topAnchor.constraint(equalTo: avatarListButton.bottomAnchor, constant: 20),
+            appleReposListButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            appleReposListButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            appleReposListButton.heightAnchor.constraint(equalToConstant: 50),
         
         ])
     }

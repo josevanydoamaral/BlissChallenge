@@ -4,4 +4,8 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="urlString" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="UserEntity" representedClassName="UserEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="imageData" optional="YES" attributeType="Binary"/>
+        <attribute name="username" optional="YES" attributeType="String"/>
+    </entity>
 </model>

@@ -57,6 +57,7 @@ final class UserStorageService: UserStorageServiceProtocol {
         }
     }
     
+    @MainActor
     func delete(user: User) throws {
         let request: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
         request.predicate = NSPredicate(format: "username == %@", user.username)

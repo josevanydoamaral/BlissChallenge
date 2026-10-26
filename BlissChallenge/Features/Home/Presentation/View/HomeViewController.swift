@@ -7,6 +7,7 @@ class HomeViewController: UIViewController {
     
     var onShowEmoji: (() -> Void)?
     var onShowUsers: (() -> Void)?
+    var onShowAppleRepos: (() -> Void)?
     
     let imageView: UIImageView = {
         let image = UIImageView()
@@ -18,9 +19,10 @@ class HomeViewController: UIViewController {
     let descriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
-        label.text = "Tap 'Random Emoji' button to see a random Emoji"
-        label.isHidden = true
+        label.textColor = .systemGray2
+        label.numberOfLines = 3
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 14)
         
         return label
     }()
@@ -193,6 +195,8 @@ class HomeViewController: UIViewController {
     }
     
     func setupData() {
+        descriptionLabel.text = "Tap 'Random Emoji' button to see a random Emoji"
+        
         randomEmojiButton.addAction(UIAction{ [weak self] _ in
             guard let self = self else { return }
         
@@ -226,6 +230,15 @@ class HomeViewController: UIViewController {
             
           
             self.onShowUsers?()
+            
+            
+        }, for: .touchUpInside)
+        
+        appleReposListButton.addAction(UIAction {[weak self] _ in
+            guard let self = self else { return }
+            
+          
+            self.onShowAppleRepos?()
             
             
         }, for: .touchUpInside)

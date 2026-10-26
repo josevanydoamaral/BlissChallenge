@@ -7,9 +7,18 @@ class AppContainer {
         return FetchEmojisViewModel(useCase: useCase)
     }
     
+    
     @MainActor func makeHomeViewModel() -> HomeViewModel {
+        let httpService: HTTPClientProtocol = HTTPClient()
+        let storageService: UserStorageServiceProtocol = UserStorageService()
+        
         let emojiRepository: EmojiRepositoryProtocol = EmojiRepository()
-        let emojiUseCase: GetRandomEmojiUseCase = GetRandomEmojiUseCase(repository: emojiRepository)
-        return HomeViewModel(useCase: emojiUseCase)
-    }
-}
+        
+        let userRepository: UserRepositoryProtocol = UserRepository(httpService: httpService, storageService: storageService as! UserStorageService)
+        
+        let getRandomEmojiUseCase: GetRandomEmojiUseCase = GetRandomEmojiUseCase(repository: emojiRepository)
+        
+        let fetchUserUserCase: FetchUserUserCase = FetchUserUserCase(repository: userRepository as! UserRepository)
+        
+        return HomeViewModel(emojiUseCase: getRandomEmojiUseCase, userUseCase: fetchUserUserCase)
+    }}

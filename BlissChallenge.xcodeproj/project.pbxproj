@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5008832A308F934000EF0F85 /* EmojiGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50088329308F934000EF0F85 /* EmojiGridCell.swift */; };
 		50127498308A1741000B7ABD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50127497308A1741000B7ABD /* AppDelegate.swift */; };
 		5012749A308A1741000B7ABD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50127499308A1741000B7ABD /* SceneDelegate.swift */; };
 		5012749C308A1741000B7ABD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5012749B308A1741000B7ABD /* HomeViewController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50088329308F934000EF0F85 /* EmojiGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiGridCell.swift; sourceTree = "<group>"; };
 		50127494308A1741000B7ABD /* BlissChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlissChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50127497308A1741000B7ABD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50127499308A1741000B7ABD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				50D80D47308BA59800668C1D /* EmojisViewController.swift */,
+				50088329308F934000EF0F85 /* EmojiGridCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				50D80D39308B6D5F00668C1D /* EmojiStorageServiceProtocol.swift in Sources */,
 				501274C9308A311B000B7ABD /* AppContainer.swift in Sources */,
 				501274CB308A326D000B7ABD /* HomeViewModel.swift in Sources */,
+				5008832A308F934000EF0F85 /* EmojiGridCell.swift in Sources */,
 				5083FBD6308CB8AA00513A55 /* ImageLoaderProtocol.swift in Sources */,
 				5083FBD8308CB95D00513A55 /* ImageLoader.swift in Sources */,
 				50127498308A1741000B7ABD /* AppDelegate.swift in Sources */,

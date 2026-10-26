@@ -1,8 +1,8 @@
-//
-//  AppleRepos.swift
-//  BlissChallenge
-//
-//  Created by Josevany on 26/10/2026.
-//
-
 import Foundation
+
+
+struct AppleRepoDTO: Decodable {
+    let id: Int
+    let name: String
+    let description: String?
+}

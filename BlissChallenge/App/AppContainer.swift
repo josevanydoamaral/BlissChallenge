@@ -35,4 +35,16 @@ class AppContainer {
         
         return UsersViewModel(useCase: fetchUsersUseCase, deleteUseCase: deleteUserUseCase)
     }
+    
+    @MainActor func makeAppleReposViewModel() -> AppleReposViewModel {
+        let httpService: HTTPClientProtocol = HTTPClient()
+        
+        let appleRepoRepository = AppleReposRepository(httpService: httpService as! HTTPClient)
+        
+        let fetchAppleReposUseCase = FetchAppleReposUseCase(repository: appleRepoRepository)
+        
+        return AppleReposViewModel(useCase: fetchAppleReposUseCase)
+        
+    }
+    
 }

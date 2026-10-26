@@ -21,6 +21,10 @@
 		50088349308FACEA00EF0F85 /* DeleteUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50088348308FACEA00EF0F85 /* DeleteUserUseCase.swift */; };
 		5008834B308FAD2A00EF0F85 /* UserGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5008834A308FAD2A00EF0F85 /* UserGridCell.swift */; };
 		5008834D308FAD5200EF0F85 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5008834C308FAD5200EF0F85 /* UsersViewController.swift */; };
+		50088353308FB24400EF0F85 /* AppleRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50088352308FB24400EF0F85 /* AppleRepo.swift */; };
+		50088356308FB28100EF0F85 /* AppleRepoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50088355308FB28100EF0F85 /* AppleRepoDTO.swift */; };
+		50088358308FB2C700EF0F85 /* AppleReposRepositoryprotocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50088357308FB2C700EF0F85 /* AppleReposRepositoryprotocol.swift */; };
+		5008835A308FB2FA00EF0F85 /* AppleReposRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50088359308FB2FA00EF0F85 /* AppleReposRepository.swift */; };
 		50127498308A1741000B7ABD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50127497308A1741000B7ABD /* AppDelegate.swift */; };
 		5012749A308A1741000B7ABD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50127499308A1741000B7ABD /* SceneDelegate.swift */; };
 		5012749C308A1741000B7ABD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5012749B308A1741000B7ABD /* HomeViewController.swift */; };
@@ -68,6 +72,10 @@
 		50088348308FACEA00EF0F85 /* DeleteUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserUseCase.swift; sourceTree = "<group>"; };
 		5008834A308FAD2A00EF0F85 /* UserGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGridCell.swift; sourceTree = "<group>"; };
 		5008834C308FAD5200EF0F85 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		50088352308FB24400EF0F85 /* AppleRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleRepo.swift; sourceTree = "<group>"; };
+		50088355308FB28100EF0F85 /* AppleRepoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleRepoDTO.swift; sourceTree = "<group>"; };
+		50088357308FB2C700EF0F85 /* AppleReposRepositoryprotocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleReposRepositoryprotocol.swift; sourceTree = "<group>"; };
+		50088359308FB2FA00EF0F85 /* AppleReposRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleReposRepository.swift; sourceTree = "<group>"; };
 		50127494308A1741000B7ABD /* BlissChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlissChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50127497308A1741000B7ABD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50127499308A1741000B7ABD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -197,6 +205,49 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		5008834E308FB1F700EF0F85 /* AppleRepos */ = {
+			isa = PBXGroup;
+			children = (
+				50088351308FB21700EF0F85 /* Presentation */,
+				50088350308FB20D00EF0F85 /* Data */,
+				5008834F308FB20400EF0F85 /* Domain */,
+			);
+			path = AppleRepos;
+			sourceTree = "<group>";
+		};
+		5008834F308FB20400EF0F85 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				50088352308FB24400EF0F85 /* AppleRepo.swift */,
+				50088357308FB2C700EF0F85 /* AppleReposRepositoryprotocol.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		50088350308FB20D00EF0F85 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				50088354308FB25300EF0F85 /* DTOs */,
+				50088359308FB2FA00EF0F85 /* AppleReposRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		50088351308FB21700EF0F85 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		50088354308FB25300EF0F85 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				50088355308FB28100EF0F85 /* AppleRepoDTO.swift */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
 		5012748B308A1741000B7ABD = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +285,7 @@
 		501274AF308A1C8A000B7ABD /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				5008834E308FB1F700EF0F85 /* AppleRepos */,
 				5008832B308F95A500EF0F85 /* Users */,
 				501274B4308A1CC6000B7ABD /* Home */,
 				501274B0308A1C95000B7ABD /* Emojis */,
@@ -455,6 +507,7 @@
 				501274BC308A236D000B7ABD /* EmojiRepository.swift in Sources */,
 				5008832E308F95C200EF0F85 /* User.swift in Sources */,
 				50D80D48308BA59800668C1D /* EmojisViewController.swift in Sources */,
+				50088356308FB28100EF0F85 /* AppleRepoDTO.swift in Sources */,
 				50D80D4D308BCFBA00668C1D /* AppCoordinator.swift in Sources */,
 				501274BA308A22D5000B7ABD /* EmojiRepositoryProtocol.swift in Sources */,
 				50088340308FAC4600EF0F85 /* FetchUsersUseCase.swift in Sources */,
@@ -469,17 +522,20 @@
 				501274CB308A326D000B7ABD /* HomeViewModel.swift in Sources */,
 				5008833A308F97B600EF0F85 /* UserStorageServiceProtocol.swift in Sources */,
 				5008834B308FAD2A00EF0F85 /* UserGridCell.swift in Sources */,
+				50088358308FB2C700EF0F85 /* AppleReposRepositoryprotocol.swift in Sources */,
 				50088347308FACAC00EF0F85 /* UsersViewState.swift in Sources */,
 				50088336308F968400EF0F85 /* UserRepository.swift in Sources */,
 				5008832A308F934000EF0F85 /* EmojiGridCell.swift in Sources */,
 				5008833E308F9A3300EF0F85 /* FetchUserUseCase.swift in Sources */,
 				5083FBD6308CB8AA00513A55 /* ImageLoaderProtocol.swift in Sources */,
 				5008834D308FAD5200EF0F85 /* UsersViewController.swift in Sources */,
+				5008835A308FB2FA00EF0F85 /* AppleReposRepository.swift in Sources */,
 				5083FBD8308CB95D00513A55 /* ImageLoader.swift in Sources */,
 				5008833C308F97EA00EF0F85 /* UserStorageService.swift in Sources */,
 				50127498308A1741000B7ABD /* AppDelegate.swift in Sources */,
 				501274C6308A2EF8000B7ABD /* FetchEmojisUseCase.swift in Sources */,
 				50088345308FAC9F00EF0F85 /* UsersViewModel.swift in Sources */,
+				50088353308FB24400EF0F85 /* AppleRepo.swift in Sources */,
 				50D80D3B308B6DCD00668C1D /* EmojiStorageService.swift in Sources */,
 				501274CE308A348D000B7ABD /* HomeViewState.swift in Sources */,
 				501274B8308A21BD000B7ABD /* Emoji.swift in Sources */,

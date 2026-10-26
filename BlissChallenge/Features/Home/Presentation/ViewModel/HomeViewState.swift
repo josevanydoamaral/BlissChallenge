@@ -11,4 +11,6 @@ enum ActionState {
 struct HomeViewState {
     var emojiState: ActionState = .idle
     var randomEmoji: RandomEmoji?
+    
+    var userState: ActionState = .idle
 }

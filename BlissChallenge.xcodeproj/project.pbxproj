@@ -15,6 +15,12 @@
 		5008833A308F97B600EF0F85 /* UserStorageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50088339308F97B600EF0F85 /* UserStorageServiceProtocol.swift */; };
 		5008833C308F97EA00EF0F85 /* UserStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5008833B308F97EA00EF0F85 /* UserStorageService.swift */; };
 		5008833E308F9A3300EF0F85 /* FetchUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5008833D308F9A3300EF0F85 /* FetchUserUseCase.swift */; };
+		50088340308FAC4600EF0F85 /* FetchUsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5008833F308FAC4600EF0F85 /* FetchUsersUseCase.swift */; };
+		50088345308FAC9F00EF0F85 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50088344308FAC9F00EF0F85 /* UsersViewModel.swift */; };
+		50088347308FACAC00EF0F85 /* UsersViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50088346308FACAC00EF0F85 /* UsersViewState.swift */; };
+		50088349308FACEA00EF0F85 /* DeleteUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50088348308FACEA00EF0F85 /* DeleteUserUseCase.swift */; };
+		5008834B308FAD2A00EF0F85 /* UserGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5008834A308FAD2A00EF0F85 /* UserGridCell.swift */; };
+		5008834D308FAD5200EF0F85 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5008834C308FAD5200EF0F85 /* UsersViewController.swift */; };
 		50127498308A1741000B7ABD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50127497308A1741000B7ABD /* AppDelegate.swift */; };
 		5012749A308A1741000B7ABD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50127499308A1741000B7ABD /* SceneDelegate.swift */; };
 		5012749C308A1741000B7ABD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5012749B308A1741000B7ABD /* HomeViewController.swift */; };
@@ -56,6 +62,12 @@
 		50088339308F97B600EF0F85 /* UserStorageServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorageServiceProtocol.swift; sourceTree = "<group>"; };
 		5008833B308F97EA00EF0F85 /* UserStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorageService.swift; sourceTree = "<group>"; };
 		5008833D308F9A3300EF0F85 /* FetchUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserUseCase.swift; sourceTree = "<group>"; };
+		5008833F308FAC4600EF0F85 /* FetchUsersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUsersUseCase.swift; sourceTree = "<group>"; };
+		50088344308FAC9F00EF0F85 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
+		50088346308FACAC00EF0F85 /* UsersViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewState.swift; sourceTree = "<group>"; };
+		50088348308FACEA00EF0F85 /* DeleteUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserUseCase.swift; sourceTree = "<group>"; };
+		5008834A308FAD2A00EF0F85 /* UserGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGridCell.swift; sourceTree = "<group>"; };
+		5008834C308FAD5200EF0F85 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		50127494308A1741000B7ABD /* BlissChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlissChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50127497308A1741000B7ABD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50127499308A1741000B7ABD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +116,7 @@
 		5008832B308F95A500EF0F85 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				50088341308FAC6100EF0F85 /* Presentation */,
 				50088331308F962500EF0F85 /* Data */,
 				5008832C308F95B600EF0F85 /* Domain */,
 			);
@@ -116,6 +129,8 @@
 				5008832D308F95C200EF0F85 /* User.swift */,
 				5008832F308F95F800EF0F85 /* UserRepositoryProtocol.swift */,
 				5008833D308F9A3300EF0F85 /* FetchUserUseCase.swift */,
+				5008833F308FAC4600EF0F85 /* FetchUsersUseCase.swift */,
+				50088348308FACEA00EF0F85 /* DeleteUserUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -153,6 +168,33 @@
 				5008833B308F97EA00EF0F85 /* UserStorageService.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		50088341308FAC6100EF0F85 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				50088343308FAC7200EF0F85 /* View */,
+				50088342308FAC6A00EF0F85 /* ViewModel */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		50088342308FAC6A00EF0F85 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				50088344308FAC9F00EF0F85 /* UsersViewModel.swift */,
+				50088346308FACAC00EF0F85 /* UsersViewState.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		50088343308FAC7200EF0F85 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5008834A308FAD2A00EF0F85 /* UserGridCell.swift */,
+				5008834C308FAD5200EF0F85 /* UsersViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5012748B308A1741000B7ABD = {
@@ -415,8 +457,10 @@
 				50D80D48308BA59800668C1D /* EmojisViewController.swift in Sources */,
 				50D80D4D308BCFBA00668C1D /* AppCoordinator.swift in Sources */,
 				501274BA308A22D5000B7ABD /* EmojiRepositoryProtocol.swift in Sources */,
+				50088340308FAC4600EF0F85 /* FetchUsersUseCase.swift in Sources */,
 				5012749C308A1741000B7ABD /* HomeViewController.swift in Sources */,
 				501274C4308A2533000B7ABD /* HTTPClient.swift in Sources */,
+				50088349308FACEA00EF0F85 /* DeleteUserUseCase.swift in Sources */,
 				50D80D37308B6B2700668C1D /* CoreDataStack.swift in Sources */,
 				50D80D44308B906100668C1D /* GetRandomEmojiUseCase.swift in Sources */,
 				50D80D3C308B718900668C1D /* BlissChallengeModel.xcdatamodeld in Sources */,
@@ -424,14 +468,18 @@
 				501274C9308A311B000B7ABD /* AppContainer.swift in Sources */,
 				501274CB308A326D000B7ABD /* HomeViewModel.swift in Sources */,
 				5008833A308F97B600EF0F85 /* UserStorageServiceProtocol.swift in Sources */,
+				5008834B308FAD2A00EF0F85 /* UserGridCell.swift in Sources */,
+				50088347308FACAC00EF0F85 /* UsersViewState.swift in Sources */,
 				50088336308F968400EF0F85 /* UserRepository.swift in Sources */,
 				5008832A308F934000EF0F85 /* EmojiGridCell.swift in Sources */,
 				5008833E308F9A3300EF0F85 /* FetchUserUseCase.swift in Sources */,
 				5083FBD6308CB8AA00513A55 /* ImageLoaderProtocol.swift in Sources */,
+				5008834D308FAD5200EF0F85 /* UsersViewController.swift in Sources */,
 				5083FBD8308CB95D00513A55 /* ImageLoader.swift in Sources */,
 				5008833C308F97EA00EF0F85 /* UserStorageService.swift in Sources */,
 				50127498308A1741000B7ABD /* AppDelegate.swift in Sources */,
 				501274C6308A2EF8000B7ABD /* FetchEmojisUseCase.swift in Sources */,
+				50088345308FAC9F00EF0F85 /* UsersViewModel.swift in Sources */,
 				50D80D3B308B6DCD00668C1D /* EmojiStorageService.swift in Sources */,
 				501274CE308A348D000B7ABD /* HomeViewState.swift in Sources */,
 				501274B8308A21BD000B7ABD /* Emoji.swift in Sources */,

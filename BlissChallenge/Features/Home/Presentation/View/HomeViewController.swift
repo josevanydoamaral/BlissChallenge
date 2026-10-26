@@ -6,6 +6,7 @@ class HomeViewController: UIViewController {
     private let viewModel: HomeViewModel
     
     var onShowEmoji: (() -> Void)?
+    var onShowUsers: (() -> Void)?
     
     let imageView: UIImageView = {
         let image = UIImageView()
@@ -219,6 +220,16 @@ class HomeViewController: UIViewController {
                 await self.viewModel.getUser(searhTerm: searchTerm)
             }
         }, for: .touchUpInside)
+        
+        avatarListButton.addAction(UIAction {[weak self] _ in
+            guard let self = self else { return }
+            
+          
+            self.onShowUsers?()
+            
+            
+        }, for: .touchUpInside)
+
         
         viewModel.OnStateChange = { [weak self] state in
             guard let self = self else { return }

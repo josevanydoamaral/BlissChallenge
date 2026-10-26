@@ -3,42 +3,17 @@ import UIKit
 import SwiftUI
 
 final class EmojisViewController: UIViewController {
-    let viewModel: FetchEmojisViewModel
-    
+    private let viewModel: FetchEmojisViewModel
     private var emojis: [Emoji] = []
+    private let refreshControl = UIRefreshControl()
     
-    private var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        return tableView
-    }()
-    
-    let getEmojiButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Get Emoji", for: .normal)
-        button.backgroundColor = .systemBlue
-        button.layer.cornerRadius = 10
+    private lazy var collectionView: UICollectionView = {
+        let layout = makeCollectionViewLayout()
+        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collection.translatesAutoresizingMaskIntoConstraints = false
+        collection.backgroundColor = .clear
         
-        return button
-    }()
-    
-    let activityIndicator: UIActivityIndicatorView = {
-        let activityIndicator = UIActivityIndicatorView()
-        
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        
-        return activityIndicator
-    }()
-    
-    let errorMessageLabel: UILabel = {
-        let errorMessageLabel = UILabel()
-        
-        errorMessageLabel.translatesAutoresizingMaskIntoConstraints = false
-        errorMessageLabel.textColor = .systemRed
-        errorMessageLabel.isHidden = true
-        
-        return errorMessageLabel
+        return collection
     }()
     
     init(viewModel: FetchEmojisViewModel) {
@@ -47,105 +22,122 @@ final class EmojisViewController: UIViewController {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) not implemented")
+        fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Emojis"
+        view.backgroundColor = .systemBackground
         
         setupUI()
-        setupBindings()
-        
+        setupData()
     }
+    
+    private func makeCollectionViewLayout() -> UICollectionViewLayout {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumInteritemSpacing = 32
+        layout.minimumLineSpacing = 32
+        layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+        
+        layout.itemSize = CGSize(width: 60, height: 60)
+        return layout
+    }
+    
     
     func setupUI() {
-        tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "EmojiCell")
+        collectionView.register(EmojiGridCell.self, forCellWithReuseIdentifier: EmojiGridCell.reuseIdentifier)
         
-        view.backgroundColor = .systemBackground
-        view.addSubview(getEmojiButton)
-        view.addSubview(tableView)
-        view.addSubview(activityIndicator)
-        view.addSubview(errorMessageLabel)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        collectionView.refreshControl = refreshControl
+        
+        view.addSubview(collectionView)
         
         NSLayoutConstraint.activate([
-            getEmojiButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            getEmojiButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            getEmojiButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            
-            getEmojiButton.heightAnchor.constraint(equalToConstant: 50),
-            
-            errorMessageLabel.topAnchor.constraint(equalTo: getEmojiButton.bottomAnchor, constant: 20),
-            errorMessageLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            errorMessageLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            
-            
-            
-            tableView.topAnchor.constraint(equalTo: errorMessageLabel.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            
-            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-            
-            
+            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+
         ])
+    }
+    
+    func setupData() {
+        viewModel.OnStateChange = {[weak self] state in
+            guard let self = self else { return }
+            print("onStateChange")
+            
+            switch state {
+            case .success(let emojis):
+                DispatchQueue.main.async {
+                    print("success")
+                    self.emojis = emojis
+                    self.collectionView.reloadData()
+                }
+                
+            case .failure(let messageError):
+                print("\(messageError)")
+            default:
+                break
+            }
+        }
+
+        Task {
+            await viewModel.getEmojis()
+        }
+        
+        refreshControl.addAction(UIAction {[weak self] _ in
+            print("Action")
+            guard let self = self else { return }
+            self.handleRefresh()
+            
+        }, for: .valueChanged)
         
     }
     
-    func setupBindings() {
-        getEmojiButton.addAction(UIAction { [weak self] _ in
-            guard let self = self else { return }
-            Task {
-                await self.viewModel.getEmojis()
-            }
-        }, for: .touchUpInside)
-        
-        viewModel.OnStateChange = {[weak self] state in
-            guard let self = self else { return }
-        
-            switch state {
-            case .loading:
-                self.activityIndicator.startAnimating()
-            case .success(let viewModelEmojis):
-                self.activityIndicator.stopAnimating()
-                self.emojis = viewModelEmojis
-                self.tableView.reloadData()
-            case .failure(let errorMessage):
-                self.activityIndicator.stopAnimating()
-                self.errorMessageLabel.text = errorMessage
-                
-
-            }
+    private func handleRefresh() {
+        print("handleRefreshCalled")
+        Task {
+            await self.viewModel.getEmojis()
+            refreshControl.endRefreshing()
             
         }
     }
-    
-
 
 }
 
-extension EmojisViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension EmojisViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print(emojis.count)
         return emojis.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EmojiCell", for: indexPath)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EmojiGridCell.reuseIdentifier, for: indexPath) as! EmojiGridCell
         
-        let item = emojis[indexPath.row]
+        let emoji = emojis[indexPath.item]
         
-        var emojiName = cell.defaultContentConfiguration()
-        emojiName.text = item.name
-        
-        cell.contentConfiguration = emojiName
+        if let url = URL(string: emoji.urlString) {
+            cell.configure(with: url)
+        }
         
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        emojis.remove(at: indexPath.item)
+        
+        collectionView.deleteItems(at: [indexPath])
+        
+    }
+    
+    
     
 }
+
 
 #Preview {
     let repository = EmojiRepository()

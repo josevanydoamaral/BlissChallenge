@@ -55,6 +55,36 @@ class HomeViewController: UIViewController {
         return button
     }()
     
+    let searchErrorLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.isHidden = true
+        
+        return label
+    }()
+    
+    let searchTextField: UITextField = {
+        let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        
+        textField.placeholder = "Digite o nome de utilizador"
+        textField.textColor = .black
+        textField.borderStyle = .roundedRect
+        textField.backgroundColor = .systemGray4
+                
+        return textField
+    }()
+    
+    let searchbutton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Search", for: .normal)
+        button.backgroundColor = .darkGray
+        button.layer.cornerRadius = 4
+        
+        return button
+    }()
+    
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -79,6 +109,9 @@ class HomeViewController: UIViewController {
         view.addSubview(errorLabel)
         view.addSubview(randomEmojiButton)
         view.addSubview(emojiListButton)
+        view.addSubview(searchTextField)
+        view.addSubview(searchbutton)
+        view.addSubview(searchErrorLabel)
         
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
@@ -103,7 +136,24 @@ class HomeViewController: UIViewController {
             emojiListButton.topAnchor.constraint(equalTo: randomEmojiButton.bottomAnchor, constant: 20),
             emojiListButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             emojiListButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            emojiListButton.heightAnchor.constraint(equalToConstant: 50)
+            emojiListButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            searchTextField.topAnchor.constraint(equalTo: emojiListButton.bottomAnchor, constant: 20),
+            searchTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            searchTextField.heightAnchor.constraint(equalToConstant: 44),
+            
+            searchbutton.topAnchor.constraint(equalTo: emojiListButton.bottomAnchor, constant: 20),
+            searchbutton.leadingAnchor.constraint(equalTo: searchTextField.trailingAnchor, constant: 10),
+            searchbutton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            searchbutton.widthAnchor.constraint(equalToConstant: 90),
+                searchbutton.heightAnchor.constraint(equalToConstant: 44),
+            
+            searchErrorLabel.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 10),
+            searchErrorLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            searchErrorLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            
+      
         
         ])
     }
@@ -122,6 +172,19 @@ class HomeViewController: UIViewController {
             
             onShowEmoji?()
                     
+        }, for: .touchUpInside)
+        
+        searchbutton.addAction(UIAction {[weak self] _ in
+            guard let self = self else { return }
+                        
+            guard let searchTerm = searchTextField.text?.lowercased() else {
+                return
+            }
+            
+            Task {
+                
+                await self.viewModel.getUser(searhTerm: searchTerm)
+            }
         }, for: .touchUpInside)
         
         viewModel.OnStateChange = { [weak self] state in
@@ -154,6 +217,24 @@ class HomeViewController: UIViewController {
                 errorLabel.isHidden = false
                 errorLabel.text = error
             }
+            
+            switch state.userState {
+            case .idle:
+                searchbutton.isEnabled = true
+            case .loading:
+                searchbutton.isEnabled = false
+            case .success:
+                searchbutton.isEnabled = true
+                searchErrorLabel.isHidden = false
+                searchErrorLabel.text = "User found"
+                searchErrorLabel.textColor = .systemGreen
+
+            case .failure(let errorMessage):
+                searchbutton.isEnabled = true
+                searchErrorLabel.isHidden = false
+                searchErrorLabel.textColor = .systemRed
+                searchErrorLabel.text = errorMessage
+            }
         }
     }
     
@@ -161,8 +242,13 @@ class HomeViewController: UIViewController {
 }
 
 #Preview {
-    let repository = EmojiRepository()
-    let useCase = GetRandomEmojiUseCase(repository: repository)
-    let viewModel = HomeViewModel(useCase: useCase)
-    return HomeViewController(viewModel: viewModel)
+    let navigationController = UINavigationController()
+    
+    let container = AppContainer()
+    
+    let coordinator = AppCoordinator(navigationController: navigationController, container: container)
+    
+    coordinator.start()
+    
+    return navigationController
 }

@@ -14,6 +14,7 @@
 		50088336308F968400EF0F85 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50088335308F968400EF0F85 /* UserRepository.swift */; };
 		5008833A308F97B600EF0F85 /* UserStorageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50088339308F97B600EF0F85 /* UserStorageServiceProtocol.swift */; };
 		5008833C308F97EA00EF0F85 /* UserStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5008833B308F97EA00EF0F85 /* UserStorageService.swift */; };
+		5008833E308F9A3300EF0F85 /* FetchUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5008833D308F9A3300EF0F85 /* FetchUserUseCase.swift */; };
 		50127498308A1741000B7ABD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50127497308A1741000B7ABD /* AppDelegate.swift */; };
 		5012749A308A1741000B7ABD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50127499308A1741000B7ABD /* SceneDelegate.swift */; };
 		5012749C308A1741000B7ABD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5012749B308A1741000B7ABD /* HomeViewController.swift */; };
@@ -54,6 +55,7 @@
 		50088335308F968400EF0F85 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		50088339308F97B600EF0F85 /* UserStorageServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorageServiceProtocol.swift; sourceTree = "<group>"; };
 		5008833B308F97EA00EF0F85 /* UserStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorageService.swift; sourceTree = "<group>"; };
+		5008833D308F9A3300EF0F85 /* FetchUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserUseCase.swift; sourceTree = "<group>"; };
 		50127494308A1741000B7ABD /* BlissChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlissChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50127497308A1741000B7ABD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50127499308A1741000B7ABD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				5008832D308F95C200EF0F85 /* User.swift */,
 				5008832F308F95F800EF0F85 /* UserRepositoryProtocol.swift */,
+				5008833D308F9A3300EF0F85 /* FetchUserUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				5008833A308F97B600EF0F85 /* UserStorageServiceProtocol.swift in Sources */,
 				50088336308F968400EF0F85 /* UserRepository.swift in Sources */,
 				5008832A308F934000EF0F85 /* EmojiGridCell.swift in Sources */,
+				5008833E308F9A3300EF0F85 /* FetchUserUseCase.swift in Sources */,
 				5083FBD6308CB8AA00513A55 /* ImageLoaderProtocol.swift in Sources */,
 				5083FBD8308CB95D00513A55 /* ImageLoader.swift in Sources */,
 				5008833C308F97EA00EF0F85 /* UserStorageService.swift in Sources */,

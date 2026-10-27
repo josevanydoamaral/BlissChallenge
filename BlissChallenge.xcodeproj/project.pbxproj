@@ -25,6 +25,10 @@
 		50088356308FB28100EF0F85 /* AppleRepoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50088355308FB28100EF0F85 /* AppleRepoDTO.swift */; };
 		50088358308FB2C700EF0F85 /* AppleReposRepositoryprotocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50088357308FB2C700EF0F85 /* AppleReposRepositoryprotocol.swift */; };
 		5008835A308FB2FA00EF0F85 /* AppleReposRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50088359308FB2FA00EF0F85 /* AppleReposRepository.swift */; };
+		5008835C308FB3C300EF0F85 /* FetchAppleReposUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5008835B308FB3C300EF0F85 /* FetchAppleReposUseCase.swift */; };
+		50088360308FB45300EF0F85 /* AppleReposViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5008835F308FB45300EF0F85 /* AppleReposViewState.swift */; };
+		50088362308FB49600EF0F85 /* AppleReposViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50088361308FB49600EF0F85 /* AppleReposViewModel.swift */; };
+		50088364308FB4FE00EF0F85 /* AppleReposViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50088363308FB4FE00EF0F85 /* AppleReposViewController.swift */; };
 		50127498308A1741000B7ABD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50127497308A1741000B7ABD /* AppDelegate.swift */; };
 		5012749A308A1741000B7ABD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50127499308A1741000B7ABD /* SceneDelegate.swift */; };
 		5012749C308A1741000B7ABD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5012749B308A1741000B7ABD /* HomeViewController.swift */; };
@@ -76,6 +80,10 @@
 		50088355308FB28100EF0F85 /* AppleRepoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleRepoDTO.swift; sourceTree = "<group>"; };
 		50088357308FB2C700EF0F85 /* AppleReposRepositoryprotocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleReposRepositoryprotocol.swift; sourceTree = "<group>"; };
 		50088359308FB2FA00EF0F85 /* AppleReposRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleReposRepository.swift; sourceTree = "<group>"; };
+		5008835B308FB3C300EF0F85 /* FetchAppleReposUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAppleReposUseCase.swift; sourceTree = "<group>"; };
+		5008835F308FB45300EF0F85 /* AppleReposViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleReposViewState.swift; sourceTree = "<group>"; };
+		50088361308FB49600EF0F85 /* AppleReposViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleReposViewModel.swift; sourceTree = "<group>"; };
+		50088363308FB4FE00EF0F85 /* AppleReposViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleReposViewController.swift; sourceTree = "<group>"; };
 		50127494308A1741000B7ABD /* BlissChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlissChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50127497308A1741000B7ABD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50127499308A1741000B7ABD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -220,6 +228,7 @@
 			children = (
 				50088352308FB24400EF0F85 /* AppleRepo.swift */,
 				50088357308FB2C700EF0F85 /* AppleReposRepositoryprotocol.swift */,
+				5008835B308FB3C300EF0F85 /* FetchAppleReposUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -236,6 +245,8 @@
 		50088351308FB21700EF0F85 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				5008835E308FB41900EF0F85 /* View */,
+				5008835D308FB40800EF0F85 /* ViewModel */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -246,6 +257,23 @@
 				50088355308FB28100EF0F85 /* AppleRepoDTO.swift */,
 			);
 			path = DTOs;
+			sourceTree = "<group>";
+		};
+		5008835D308FB40800EF0F85 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5008835F308FB45300EF0F85 /* AppleReposViewState.swift */,
+				50088361308FB49600EF0F85 /* AppleReposViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5008835E308FB41900EF0F85 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				50088363308FB4FE00EF0F85 /* AppleReposViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5012748B308A1741000B7ABD = {
@@ -513,12 +541,14 @@
 				50088340308FAC4600EF0F85 /* FetchUsersUseCase.swift in Sources */,
 				5012749C308A1741000B7ABD /* HomeViewController.swift in Sources */,
 				501274C4308A2533000B7ABD /* HTTPClient.swift in Sources */,
+				50088360308FB45300EF0F85 /* AppleReposViewState.swift in Sources */,
 				50088349308FACEA00EF0F85 /* DeleteUserUseCase.swift in Sources */,
 				50D80D37308B6B2700668C1D /* CoreDataStack.swift in Sources */,
 				50D80D44308B906100668C1D /* GetRandomEmojiUseCase.swift in Sources */,
 				50D80D3C308B718900668C1D /* BlissChallengeModel.xcdatamodeld in Sources */,
 				50D80D39308B6D5F00668C1D /* EmojiStorageServiceProtocol.swift in Sources */,
 				501274C9308A311B000B7ABD /* AppContainer.swift in Sources */,
+				5008835C308FB3C300EF0F85 /* FetchAppleReposUseCase.swift in Sources */,
 				501274CB308A326D000B7ABD /* HomeViewModel.swift in Sources */,
 				5008833A308F97B600EF0F85 /* UserStorageServiceProtocol.swift in Sources */,
 				5008834B308FAD2A00EF0F85 /* UserGridCell.swift in Sources */,
@@ -533,10 +563,12 @@
 				5083FBD8308CB95D00513A55 /* ImageLoader.swift in Sources */,
 				5008833C308F97EA00EF0F85 /* UserStorageService.swift in Sources */,
 				50127498308A1741000B7ABD /* AppDelegate.swift in Sources */,
+				50088364308FB4FE00EF0F85 /* AppleReposViewController.swift in Sources */,
 				501274C6308A2EF8000B7ABD /* FetchEmojisUseCase.swift in Sources */,
 				50088345308FAC9F00EF0F85 /* UsersViewModel.swift in Sources */,
 				50088353308FB24400EF0F85 /* AppleRepo.swift in Sources */,
 				50D80D3B308B6DCD00668C1D /* EmojiStorageService.swift in Sources */,
+				50088362308FB49600EF0F85 /* AppleReposViewModel.swift in Sources */,
 				501274CE308A348D000B7ABD /* HomeViewState.swift in Sources */,
 				501274B8308A21BD000B7ABD /* Emoji.swift in Sources */,
 				5012749A308A1741000B7ABD /* SceneDelegate.swift in Sources */,

@@ -5,6 +5,12 @@ final class UsersViewController: UIViewController {
     let viewModel: UsersViewModel
     var users: [User] = []
     
+    let activityIndicator: UIActivityIndicatorView = {
+        let aI = UIActivityIndicatorView()
+        aI.translatesAutoresizingMaskIntoConstraints = false
+        return aI
+    }()
+    
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeCollectionViewFlowLayout())
         
@@ -25,7 +31,7 @@ final class UsersViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Recently Searched users \(users.count)"
+        title = "Recently Searched users"
         
         setupUI()
         setupData()
@@ -39,9 +45,14 @@ final class UsersViewController: UIViewController {
         collectionView.delegate = self
         
         view.addSubview(collectionView)
+        view.addSubview(activityIndicator)
         
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            activityIndicator.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            activityIndicator.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            activityIndicator.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+
+            collectionView.topAnchor.constraint(equalTo: activityIndicator.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
@@ -55,11 +66,13 @@ final class UsersViewController: UIViewController {
             
             switch state {
             case .loading:
-                print("")
+                activityIndicator.startAnimating()
             case .success(let users):
+                activityIndicator.stopAnimating()
                 self.users = users
                 collectionView.reloadData()
             case .failure(let errorMessage):
+                activityIndicator.stopAnimating()
                 print("Error Message")
             }
         }

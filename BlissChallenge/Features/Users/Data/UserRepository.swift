@@ -37,7 +37,7 @@ final class UserRepository: UserRepositoryProtocol {
     }
     
     func deleteUser(user: User) async throws -> Bool {
-        try storageService.delete(user: user)
+        try await storageService.delete(user: user)
         return true
     }
     

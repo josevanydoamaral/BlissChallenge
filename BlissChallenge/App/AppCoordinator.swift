@@ -16,6 +16,8 @@ final class AppCoordinator {
         let homeViewController = HomeViewController(viewModel: viewModel)
         homeViewController.onShowEmoji = { [weak self] in self?.showEmojis() }
         homeViewController.onShowUsers = { [weak self] in self?.showUsers() }
+        homeViewController.onShowAppleRepos = { [weak self] in self?.showAppleRepos() }
+        
         
         navigationController.pushViewController(homeViewController, animated: false)
     }
@@ -32,6 +34,15 @@ final class AppCoordinator {
         let usersViewController = UsersViewController(viewModel: viewModel)
         
         navigationController.pushViewController(usersViewController, animated: true)
+
+    }
+    
+    func showAppleRepos() {
+        let viewModel = container.makeAppleReposViewModel()
+        
+        let appleReposVC = AppleReposViewController(viewModel: viewModel)
+        
+        navigationController.pushViewController(appleReposVC, animated: true)
 
     }
 }

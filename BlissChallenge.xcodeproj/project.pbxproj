@@ -276,6 +276,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		500883663090292100EF0F85 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				501274A0308A1743000B7ABD /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		5012748B308A1741000B7ABD = {
 			isa = PBXGroup;
 			children = (
@@ -295,15 +303,13 @@
 		50127496308A1741000B7ABD /* BlissChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				500883663090292100EF0F85 /* Resources */,
 				501274C7308A310B000B7ABD /* App */,
 				501274BD308A243F000B7ABD /* Core */,
 				501274AF308A1C8A000B7ABD /* Features */,
-				50127497308A1741000B7ABD /* AppDelegate.swift */,
-				50127499308A1741000B7ABD /* SceneDelegate.swift */,
 				501274AB308A19E8000B7ABD /* .gitignore */,
 				501274AD308A1A47000B7ABD /* README.md */,
 				5012749D308A1741000B7ABD /* Main.storyboard */,
-				501274A0308A1743000B7ABD /* Assets.xcassets */,
 				501274A2308A1743000B7ABD /* LaunchScreen.storyboard */,
 				501274A5308A1743000B7ABD /* Info.plist */,
 			);
@@ -409,6 +415,8 @@
 		501274C7308A310B000B7ABD /* App */ = {
 			isa = PBXGroup;
 			children = (
+				50127497308A1741000B7ABD /* AppDelegate.swift */,
+				50127499308A1741000B7ABD /* SceneDelegate.swift */,
 				501274C8308A311B000B7ABD /* AppContainer.swift */,
 				50D80D4C308BCFBA00668C1D /* AppCoordinator.swift */,
 			);
